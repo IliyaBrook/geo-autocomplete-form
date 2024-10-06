@@ -1,10 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import GeoAutocomplete from './GeoAutocomplete.tsx'
 import './index.css'
+
+const GMAP_API_KEY = import.meta.env.VITE_GMAP_API_KEY;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <GeoAutocomplete API_KEY={GMAP_API_KEY}  />
   </StrictMode>,
 )
