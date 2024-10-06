@@ -1,21 +1,32 @@
 {
-  "name": "geo-autocomplete",
+  "name": "geo-autocomplete-form",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Iliya Brook <iliyabrook1987@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IliyaBrook/geo-autocomplete-form.git"
+  },
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
     "antd": "^5.21.2",
     "fuse.js": "^7.0.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sass-embedded": "^1.79.4"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
@@ -28,6 +39,10 @@
     "globals": "^15.9.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.7.0",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "sass-embedded": "^1.79.4",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-tsconfig-paths": "^4.3.2"
   }
 }
