@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Input, AutoComplete, Button } from "antd";
-import { LoadScript, useJsApiLoader } from "@react-google-maps/api";
+import { useJsApiLoader } from '@react-google-maps/api'
+import { AutoComplete, Button, Input } from 'antd'
+import React, { useState } from 'react'
 
 const googleLibraries: ("places" | "geometry" | "drawing" | "visualization")[] = ["places"];
 
@@ -23,7 +23,7 @@ const GeoAutocomplete: React.FC<AutoCompleteComponentProps> = ({ API_KEY }) => {
   const [countryOptions, setCountryOptions] = useState<{ value: string }[]>([]);
   const [address, setAddress] = useState<Address | null>(null);
   
-  const { isLoaded } = useJsApiLoader({
+  const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: API_KEY,
     libraries: googleLibraries,
   });
@@ -96,10 +96,14 @@ const GeoAutocomplete: React.FC<AutoCompleteComponentProps> = ({ API_KEY }) => {
     }
   };
   
+  if (loadError) {
+    return <div>Error loading Google Maps API</div>;
+  }
+
   return (
-    <LoadScript googleMapsApiKey={API_KEY} libraries={googleLibraries}>
+    <div style={{ width: "300px" }}>
       {isLoaded ? (
-        <div style={{ width: "300px" }}>
+        <>
           <AutoComplete
             value={country}
             onChange={handleCountryChange}
@@ -132,11 +136,11 @@ const GeoAutocomplete: React.FC<AutoCompleteComponentProps> = ({ API_KEY }) => {
               <pre>{JSON.stringify(address, null, 2)}</pre>
             </div>
           )}
-        </div>
+        </>
       ) : (
         <p>Loading...</p>
       )}
-    </LoadScript>
+    </div>
   );
 };
 
