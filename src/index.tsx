@@ -1,7 +1,7 @@
 import { useJsApiLoader } from '@react-google-maps/api'
 import { AutoComplete, Button, Col, Input, Row, Skeleton } from 'antd'
 import React, { useState } from 'react'
-import { type AutoCompleteComponentProps, googleLibraries } from './types.ts'
+import { type AutoCompleteComponentProps, googleLibraries } from './types/types'
 
 const GeoAutocompleteForm: React.FC<AutoCompleteComponentProps> = ({
 	                                                                   API_KEY,
@@ -40,7 +40,6 @@ const GeoAutocompleteForm: React.FC<AutoCompleteComponentProps> = ({
 	const [countryCode, setCountryCode] = useState<string>('')
 	const [cityOptions, setCityOptions] = useState<{ value: string }[]>([])
 	const [countryOptions, setCountryOptions] = useState<{ value: string }[]>([])
-	// const [address, setAddress] = useState<Address | null>(null)
 	const [countrySelected, setCountrySelected] = useState<boolean>(false)
 	
 	const { isLoaded, loadError } = useJsApiLoader({
@@ -134,7 +133,7 @@ const GeoAutocompleteForm: React.FC<AutoCompleteComponentProps> = ({
 	const handleSubmit = () => {
 		if (city && country) {
 			handlePlaceSelection()
-		
+			
 		}
 	}
 	
