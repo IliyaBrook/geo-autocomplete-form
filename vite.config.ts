@@ -6,7 +6,6 @@ import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: 'src',
   plugins: [
     react(),
     viteTsconfigPaths(),

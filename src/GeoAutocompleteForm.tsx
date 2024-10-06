@@ -1,7 +1,7 @@
 import { useJsApiLoader } from '@react-google-maps/api'
 import { AutoComplete, Button, Col, Input, Row, Skeleton } from 'antd'
 import React, { useState } from 'react'
-import { type AutoCompleteComponentProps, googleLibraries } from './tyes.ts'
+import { type AutoCompleteComponentProps, googleLibraries } from './types.ts'
 
 const GeoAutocompleteForm: React.FC<AutoCompleteComponentProps> = ({
 	                                                                   API_KEY,
